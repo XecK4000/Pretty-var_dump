@@ -14,7 +14,7 @@ $array = [
 	1,2,3,4,5,
 	'oui' => [
 		'a' => [1,2,3],
-		'b' => 'dsqjmdskl',
+		'b' => 'Un texte un peu plus long pour montrer l\'exemple. Avec des balises html <b> comme ça </b> aussi.',
 		'cdsdf' => NULL,
 		'false' => false,
 		'dsqds' => [12.5, 398.23, 124.26]
@@ -29,10 +29,16 @@ echo '
 <style>
 	table {
 		border-collapse: collapse;
-		width: 100%;
 	}
 	table, td, th {
-		border: 1px solid black;
+		border: 1px solid darkgrey;
+	}
+	td, th {
+		box-sizing: border-box;
+		width: 25%;
+	}
+	pre {
+		white-space: pre-wrap;
 	}
 </style>
 <table>
@@ -43,12 +49,11 @@ echo '
 		<th>print_r</th>
 	</tr>
 	<tr>
-		<td valign="top">';
-debug($array);
-echo'</td><td valign="top"><pre>';var_dump($array);echo'</pre></td>';
-echo'</td><td valign="top"><pre>';var_export($array);echo'</pre></td>';
-echo'<td valign="top"><pre>';print_r($array);echo'</pre></td>';
-echo '</tr></table>';
+		<td valign="top">';debug($array, ['bonjour', 5, 3], 'test');echo '</td>
+		<td valign="top"><pre>';var_dump($array);echo'</pre></td>
+		<td valign="top"><pre>';var_export($array);echo'</pre></td>
+		<td valign="top"><pre>';print_r($array);echo'</pre></td>
+	</tr></table>';
 
 
 
