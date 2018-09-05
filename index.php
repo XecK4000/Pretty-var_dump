@@ -49,7 +49,7 @@ echo '
 		<th>print_r</th>
 	</tr>
 	<tr>
-		<td valign="top">';debug($array, ['bonjour', 5, 3], 'test');echo '</td>
+		<td valign="top">';debug($array);echo '</td>
 		<td valign="top"><pre>';var_dump($array);echo'</pre></td>
 		<td valign="top"><pre>';var_export($array);echo'</pre></td>
 		<td valign="top"><pre>';print_r($array);echo'</pre></td>
