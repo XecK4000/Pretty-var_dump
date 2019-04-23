@@ -1,6 +1,12 @@
 <?php
 
+echo '
+<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" href="style.css" media="all" />';
+
 require('functions.php');
+
+
 
 class MyObject {
 	function __construct() {
@@ -9,7 +15,6 @@ class MyObject {
 	public $public_attribute;
 
 }
-
 $array = [
 	1,2,3,4,5,
 	'oui' => [
@@ -22,8 +27,12 @@ $array = [
 	'non' => [
 		new MyObject(),
 		fopen('index.php', 'r'),
-	]
+	],
+	'empty string' => '',
+	'"empty" string' => 'empty',
 ];
+$complex = '{"json": "{\"glossary\": {\"title\": \"example glossary\",\"GlossDiv\": {\"title\": \"S\",\"GlossList\": {\"GlossEntry\": {\"ID\": \"SGML\",\"SortAs\": \"SGML\",\"GlossTerm\": \"Standard Generalized Markup Language\",\"Acronym\": \"SGML\",\"Abbrev\": \"ISO 8879:1986\",\"GlossDef\": {\"para\": \"A meta-markup language, used to create markup languages such as DocBook.\",\"GlossSeeAlso\": [\"GML\", \"XML\"]},\"GlossSee\": \"markup\"}}}}}", "xml": "<note><to><firstname>Tove</firstname><lastname>Tove</lastname></to><from type=\"firstname\">Jani</from><heading>Reminder</heading><body type=\"text\" size=\"short\">Don\'t forget me this weekend!</body><extra>Yes</extra><extra></extra><extra>No</extra></note>"}';
+
 
 echo '
 <style>
@@ -41,6 +50,8 @@ echo '
 		white-space: pre-wrap;
 	}
 </style>
+<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" href="style.css" media="all" />
 <table>
 	<tr>
 		<th>New</th>
@@ -53,9 +64,17 @@ echo '
 		<td valign="top"><pre>';var_dump($array);echo'</pre></td>
 		<td valign="top"><pre>';var_export($array);echo'</pre></td>
 		<td valign="top"><pre>';print_r($array);echo'</pre></td>
-	</tr></table>';
-
-
-
-
-?>
+	</tr>
+	<tr>
+		<td valign="top">';debug($complex);echo '</td>
+		<td valign="top"><pre>';var_dump($complex);echo'</pre></td>
+		<td valign="top"><pre>';var_export($complex);echo'</pre></td>
+		<td valign="top"><pre>';print_r($complex);echo'</pre></td>
+	</tr>
+	<tr>
+		<td valign="top">';debug($complex);echo '</td>
+		<td valign="top"><pre>';var_dump($complex);echo'</pre></td>
+		<td valign="top"><pre>';var_export($complex);echo'</pre></td>
+		<td valign="top"><pre>';print_r($complex);echo'</pre></td>
+	</tr>
+</table>';
