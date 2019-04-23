@@ -1,0 +1,97 @@
+.data_dump_type_array > .data_dump_title::before,
+.data_dump_type_object > .data_dump_title::before,
+.data_dump_type_json > .data_dump_title::before,
+.data_dump_type_xml > .data_dump_title::before {
+	content: '▼';
+}
+.data_dump_type_array.data_dump_hidden > .data_dump_title::before,
+.data_dump_type_object.data_dump_hidden > .data_dump_title::before,
+.data_dump_type_json.data_dump_hidden > .data_dump_title::before,
+.data_dump_type_xml.data_dump_hidden > .data_dump_title::before {
+	content: '►';
+}
+.data_dump_hidden > .data_dump_content {
+	display: none;
+}
+.data_dump_type_array > .data_dump_content,
+.data_dump_type_object > .data_dump_content,
+.data_dump_type_json > .data_dump_content,
+.data_dump_type_xml > .data_dump_content {
+	margin-left: 40px;
+}
+.data_dump_type_boolean,
+.data_dump_type_integer,
+.data_dump_type_double,
+.data_dump_type_string,
+.data_dump_type_resource,
+.data_dump_type_NULL,
+.data_dump_type_unknown {
+	display: flex;
+	align-items: center;
+}
+.data_dump_type_array,
+.data_dump_type_object,
+.data_dump_type_json,
+.data_dump_type_xml {
+	display: flex;
+	flex-direction: column;
+}
+.data_dump_type_array.data_dump_hidden,
+.data_dump_type_object.data_dump_hidden,
+.data_dump_type_json.data_dump_hidden,
+.data_dump_type_xml.data_dump_hidden {
+	flex-direction: row;
+	align-items: center;
+}
+.data_dump_parent {
+	transition: background-color 100ms;
+	margin: 1px 0px;
+}
+.data_dump_parent.hover {
+	background: #EEE;
+}
+
+.data_dump_depth_0 {
+	border: 1px solid black;
+	cursor: pointer;
+}
+.data_dump_parent + script + .data_dump_parent {
+	margin-top: 1px;
+}
+.data_dump_depth_0 > .data_dump_title > span:first-child {
+	font-size: larger;
+	text-decoration: underline;
+}
+.data_dump_title {
+	display: flex;
+	align-items: center;
+}
+.data_dump_title > span:first-child {
+	font-weight: bold;
+}
+.data_dump_title > span:first-child + span {
+	padding: 0 10px;
+	color: grey;
+}
+.data_dump_title > span:first-child + span + span {
+	color: #555;
+}
+.data_dump_end {
+	color: grey;
+}
+
+.data_dump_complex_origin {
+	display: none;
+}
+
+
+.data_dump_type_boolean  > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: lightskyblue;                 }
+.data_dump_type_integer  > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: violet;                       }
+.data_dump_type_double   > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: plum;                         }
+.data_dump_type_string   > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: pink;                         }
+.data_dump_type_resource > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: greenyellow;                  }
+.data_dump_type_NULL     > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: orange;                       }
+.data_dump_type_unknown  > .data_dump_content                     { cursor: copy; padding: 1px 4px; background: maroon;                       }
+
+.data_dump_type_json > .data_dump_title > .data_dump_complex_type { cursor: help; padding: 1px 4px; background: lightgreen; color: black;     }
+.data_dump_type_xml  > .data_dump_title > .data_dump_complex_type { cursor: help; padding: 1px 4px; background: cornflowerblue; color: black; }
