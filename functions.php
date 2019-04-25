@@ -149,7 +149,7 @@ function data_dump($data, $title, $options = [], $depth = 0) {
 			} else if($type == 'boolean' && !$data) {
 				$e = 'false';
 			} else if($type == 'string') {
-				$title .= '('.strlen($e).')';
+				$title .= '('.strlen($data).')';
 				$e = htmlentities($data);
 				if($e === '') {
 					$e = '<i>empty</i>';
